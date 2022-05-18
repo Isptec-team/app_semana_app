@@ -12,7 +12,8 @@ class NoticiaWidget extends StatelessWidget {
     return Container(
       height: 140,
       width: 140,
-      child: Center(
+      child: InkWell(
+        onTap: () => {Navigator.pushNamed(context, '/ver_noticia')},
         child: Column(
           children: [
             Container(
@@ -26,6 +27,7 @@ class NoticiaWidget extends StatelessWidget {
           ],
         ),
       ),
+      //),
     );
   }
 }

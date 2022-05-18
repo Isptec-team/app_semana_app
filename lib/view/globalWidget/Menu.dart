@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Menu extends StatelessWidget {
+  final int index;
+
+  const Menu({Key key, this.index}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -9,7 +12,9 @@ class Menu extends StatelessWidget {
         topRight: Radius.circular(10),
       ),
       child: BottomNavigationBar(
-        currentIndex: 0,
+        onTap: (value) {},
+        elevation: 1,
+        currentIndex: index ?? 0,
         selectedItemColor: Colors.white,
         backgroundColor: Colors.orange,
         items: [
@@ -20,6 +25,10 @@ class Menu extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: "Maratona",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.alarm),
+            label: "Cronometro",
           ),
         ],
       ),
